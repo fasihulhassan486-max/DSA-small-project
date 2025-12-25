@@ -1,0 +1,48 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build sorting_demo",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-std=c++17",
+        "-g",
+        "sorting_demo.cpp",
+        "-o",
+        "sorting_demo"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [
+        "$gcc"
+      ]
+    },
+    {
+      "label": "build ds_visualizer",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-std=c++17",
+        "-g",
+        "ds_visualizer.cpp",
+        "-o",
+        "ds_visualizer"
+      ],
+      "problemMatcher": [
+        "$gcc"
+      ]
+    },
+    {
+      "label": "build all",
+      "type": "shell",
+      "dependsOn": [
+        "build sorting_demo",
+        "build ds_visualizer"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}

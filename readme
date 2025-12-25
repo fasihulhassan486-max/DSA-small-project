@@ -1,0 +1,64 @@
+# DSA-Demos (Sorting + Stack & Queue Visualizer)
+
+This folder contains two small, presentation-friendly C++ programs demonstrating basic algorithms and data structures.
+
+Files:
+- `sorting_demo.cpp` — Sorting demo (Bubble, Selection, Insertion, QuickSort). Interactive, counts comparisons/swaps and measures time. Good for live step-by-step runs.
+- `ds_visualizer.cpp` — Stack & Queue visualizer. Array-based and linked-list implementations, prints internal state after each operation. Good for demonstrating LIFO vs FIFO and internal memory order.
+- `Makefile` — build both demos quickly on Linux/macOS/WSL or MinGW.
+
+How to use
+1. Open the folder in your editor (VS Code recommended).
+
+2. Build:
+   - Using Make (Linux/macOS/WSL, or MinGW with make):
+     ```
+     make
+     ```
+     This builds two executables: `sorting_demo` and `ds_visualizer`.
+
+   - Or compile individually:
+     ```
+     g++ -std=c++17 -O2 sorting_demo.cpp -o sorting_demo
+     g++ -std=c++17 -O2 ds_visualizer.cpp -o ds_visualizer
+     ```
+
+   - On Windows with MSVC you may need to replace `#include <bits/stdc++.h>` and use proper includes, or use MinGW/g++ which supports the examples as-is.
+
+3. Run:
+   - Sorting demo:
+     ```
+     ./sorting_demo
+     ```
+     Choose option 1 for step-by-step on small arrays (n ≤ 20) or option 2 to compare all algorithms.
+
+   - Stack & Queue visualizer:
+     ```
+     ./ds_visualizer
+     ```
+     Use menus to push/pop/enqueue/dequeue and use auto-demo sequences for quick presentation.
+
+Zipping the folder
+- To make a zip for submission or transfer (Linux/macOS/WSL):
+  ```
+  zip -r DSA-Demos.zip .
+  ```
+- On Windows: right-click the folder → Send to → Compressed (zipped) folder.
+
+Presentation tips (5–8 minutes)
+- Sorting demo:
+  - Show Bubble Sort step-mode for a small array (n ≤ 10) and explain swaps/comparisons.
+  - Use "compare all" on a larger array to show time & counts difference (Bubble/Selection/Insertion ≈ O(n^2) vs QuickSort ≈ O(n log n) average).
+  - Show the small code snippet for swap/comparison and mention Big-O.
+
+- Stack & Queue:
+  - Demonstrate push 1,2,3 and pop/dequeue to highlight LIFO vs FIFO.
+  - Show array queue head/tail indices and resizing to explain circular buffer and amortized O(1).
+  - For linked list, explain pointers/front-rear and memory allocation.
+
+If you want I can:
+- Create a single combined `main.cpp` that includes both demos behind one menu (so you compile just one program),
+- Replace `#include <bits/stdc++.h>` with explicit includes for MSVC compatibility,
+- Generate a small 3–4 slide PPTX text (title + demo steps + key points) you can paste into PowerPoint.
+
+Which extra would you like?
